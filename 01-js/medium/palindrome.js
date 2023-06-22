@@ -7,7 +7,7 @@
 */
 
 function isPalindrome(str) {
-  let answer = true;
+  let answer = false;
   var strl = str.toLowerCase();
   let temp = "";
 
@@ -15,7 +15,12 @@ function isPalindrome(str) {
     temp += strl[i];
   }
 
-  if(temp === strl) {
+  let newtemp = temp.replace(/\s/g, "");
+  newtemp = newtemp.replace(/[^\w\s]|_/g, "");
+  let newstrl = strl.replace(/\s/g, "");
+  newstrl = newstrl.replace(/[^\w\s]|_/g, "");
+
+  if(newtemp === newstrl) {
     answer = true;
   }
   else {
